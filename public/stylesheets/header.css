@@ -132,7 +132,7 @@ header {
 
 .subcategory_menu.active {
     display: block;
-    background-color: rgb(68, 23, 23);
+    background-color: white;
 }
 
 .subcategory_menu .subcategory_header {

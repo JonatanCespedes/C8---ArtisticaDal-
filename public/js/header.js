@@ -24,3 +24,14 @@ function dropSearch(){
         subcategoryMenu.classList.remove("active")
     }
 }
+
+function dropSubCategoryMenu (id) {
+    let list = document.getElementById(`${id}`)
+    list.classList.toggle("active")
+    navBar.style.display = "none"
+    searchBar.style.display = "none"
+}
+
+function closeWindow () {
+    document.querySelector(".active").classList.remove("active")
+}
