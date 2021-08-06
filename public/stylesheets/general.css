@@ -3,7 +3,8 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0; 
+    padding: 0;
+    
 }
 
 a {
@@ -36,3 +37,4 @@ ul {
     background: linear-gradient(90deg, white, var(--primary)) ;
     color: var(--primary)    
 }
+

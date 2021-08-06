@@ -1,9 +1,11 @@
+/* Maquetado mobile first (a partir de pantalla de 320)*/
+
 header {
     position: sticky;
     top: 0;
     z-index: 999;
+    user-select: none;
 }
-
 .main-header {
     background-color: white;
     display: flex;
@@ -98,7 +100,6 @@ header {
 /* Finaliza botón y barra de búsqueda mobile */
 
 /* Botón y menú desplegable mobile */
-
 .main-header .navigation-bar {
     order: 4;
     padding: 15px;
@@ -107,6 +108,12 @@ header {
 
 .main-header .navigation-bar ul.menu li {
     padding: 10px 0;
+    cursor: pointer;
+    transition: color .5s ease;
+}
+
+.main-header .navigation-bar ul.menu li:hover {
+    color: var(--primary);
 }
 
 .main-header .navigation-bar .user-icons-mobile {
@@ -117,6 +124,10 @@ header {
 .main-header .navigation-bar .user-icons-mobile i{
     font-size: 24px;
     margin-left: 10px;
+}
+
+.main-header .navigation-bar#navigation-bar-desktop {
+    display: none;
 }
 
 /* Menu desplegable de subcategorías */
@@ -148,6 +159,10 @@ header {
 
 .subcategory_menu ul {
     padding: 15px;
+}
+
+.header-opacity {
+    opacity: 0.8;
 }
 
 /* MEDIA QUERIES */
@@ -199,6 +214,12 @@ header {
         display: none;
     }    
 
+   .main-header .logo {
+        height: 68px;
+        width: 262px;
+        order: 0;
+    }
+    
     .main-header .search-icon {
         display: none;
     }
@@ -230,4 +251,3 @@ header {
     }
 
 }
-

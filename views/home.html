@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artística Dalí - Home</title>
+    
+    <title>Artistica Dalí - Home</title>
 
     <!-- FAVICON -->
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon.png">
@@ -15,15 +16,19 @@
     <meta name="msapplication-TileColor" content="#204051">
     <meta name="theme-color" content="#ffffff">
     
+
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <!-- CSS flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/stylesheets/style.css">
-
-     <!-- Scripts Locales -->
+    
+    <!-- Scripts Locales -->
     <script src="/js/header.js" defer></script>
     <script src="/js/carousel.js" defer></script>
-
+    <script src="/js/product-slider.js" defer></script>
+    <script src="/js/productDetail.js" defer></script>
 </head>
 <body>
     <header >
@@ -180,7 +185,166 @@
             </section>
         <!-- END CAROUSEL -->
 
+         <!-- SPECIAL OFFERS -->
+
+         <section class="special-offers">
+            <h3 class="section__title">Productos relacionados</h3>
+            <!-- Product Slider -->
+
+            <div class="gallery productSlider js-flickity"
+            data-flickity-options='{ "wrapAround": true }' >
+                <div class="carousel-cell  productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+                <div class="carousel-cell productSlide">
+                    <div class="productDiscount">15% OFF</div>
+                    <img src="/images/productos/acuarelaGiotto.jpg" alt="">
+                    <p class="productName">Nombre del producto</p>
+                    <h4 class="productPrice">$1530</h4>
+                </div>
+            </div>
+        </section>
+        <!-- END SPECIAL OFFERS -->
+        <div class="mancha">
+            <img src="/images/manchas/pngwing.com (5).png" alt="">
+        </div>
+
+        <!-- CATEGORIES -->
+
+        <div class="mancha2">
+            <img src="/images/manchas/pngwing.com (7).png" alt="">
+        </div>
+
+        <section class="categories-section">
+            <div class="categories">
+                <div class="category-card">
+                    <a href="/category/1"><img src="/images/categorias/cat_artistica.jpg" alt=""></a>
+                </div>
+                <div class="category-card">
+                    <a href="/category/2"> <img src="/images/categorias/cat_escolar.jpg" alt=""></a>
+                </div>
+                <div class="category-card">
+                    <a href="/category/3"> <img src="/images/categorias/cat_oficina.jpg" alt=""></a>
+                </div>
+            </div>
+             
+        </section>
+        <!-- END CATEGORIES -->
+        <section class="banner">
+            <img src="/images/bannerpng 1.png" alt="">
+        </section>
+
+
+        <div class="mancha">
+            <img src="/images/manchas/pngwing.com (5).png" alt="">
+        </div>
+
     </main>
-    
+    <footer class="footer">
+        <div class="container-fluid contenedor-fluid">
+            <div class="row contenedor">
+                <div class="navegacion">
+                    <h4>Navegación</h4>
+                    <div>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/products/category/1">Escolar</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/products/category/2">Artística</a></li>
+                            <li><a href="/products/category/3">Oficina</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="border">
+                <div class="pagos">
+                    <h4>Medios de pago</h4>
+                    <div class="pagos-images">
+                        <div class="imagen">
+                            <img src="/images/footer/ml.png" alt="Mercado Pago">
+                        </div>
+                        <div class="imagen">
+                            <img src="/images/footer/mastercard.png" alt="Matercard">
+                        </div>
+                        <div class="imagen">
+                            <img src="/images/footer/visa.png" alt="Visa">
+                        </div>
+                    </div>
+                </div>
+                <hr class="border">
+                <div class="contacto">
+                    <h4>Contacto</h4>
+                    <div>
+                        <ul>
+                            <li><a href="/contact">Sucursales</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">Teléfono: 011-3142592</a></li>
+                            <li><a href="">Email: artisticadali@gmail.com</a></li>
+                        </ul>
+                    </div>
+                    <ul class="social">
+                        <li><a href=""><img src="/images/footer/whatsapp.svg" alt="whatsapp"></a></li>
+                        <li><a href=""><img src="/images/footer/twitter.svg" alt="twitter"></a></li>
+                        <li><a href=""><img src="/images/footer/facebook.svg" alt="facebook"></a></li>
+                        <li><a href=""><img src="/images/footer/instagram.svg" alt="instagram"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+     <!-- JavaScript -->
+     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
 </html>
