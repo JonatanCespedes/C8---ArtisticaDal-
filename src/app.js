@@ -7,10 +7,11 @@ let indexRouter = require('./routes/index');
 let productsRouter = require('./routes/products');
 
 /* Middleware */
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 /* VIEWS */
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 /* Rutas */
 app.use('/', indexRouter);
