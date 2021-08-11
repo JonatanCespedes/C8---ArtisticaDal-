@@ -1,4 +1,4 @@
-let { products } = require('../data/dataBase'); 
+let { products, carousel } = require('../data/dataBase'); 
 
 module.exports = {
     index: (req, res) => {
@@ -6,7 +6,8 @@ module.exports = {
 
         res.render('home', {
             titleSlider : "Ofertas especiales",
-            productsSlider
+            productsSlider,
+            bannerSlides: carousel
         })
     }
 }
