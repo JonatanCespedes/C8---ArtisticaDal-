@@ -63,7 +63,7 @@
 @media screen and (min-width: 1024px) {
     .productSlide {
         width: 20%;
-        height: 300px;
+        min-height: fit-content;
     }
 }
 

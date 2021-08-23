@@ -1,13 +1,14 @@
-let { products, carousel } = require('../data/dataBase'); 
+const { products, carousel, categories } = require('../data/dataBase')
 
 module.exports = {
     index: (req, res) => {
-        let productsSlider = products.filter(product => product.discount >= 15)
-
-        res.render('home', {
-            titleSlider : "Ofertas especiales",
-            productsSlider,
-            bannerSlides: carousel
+        let sliderProducts = products.filter(product => product.discount >= 15)
+        
+        res.render('index', {
+            sliderTitle : "Ofertas especiales",
+            sliderProducts,
+            carousel,
+            categories
         })
     }
 }

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-<%- include('partials/head.ejs') %>
+    <%- include('partials/head.ejs') %>
 <body>
     <%- include('partials/header.ejs') %>
-
+    
     <main class="home">
-         <!-- CAROUSEL -->
-         <%- include('partials/carousel.ejs') %>  
+        <!-- CAROUSEL -->
+        <%- include('partials/carousel.ejs') %>
         <!-- END CAROUSEL -->
 
-         <!-- SPECIAL OFFERS -->
-
-         <%- include('partials/slider.ejs') %>
-
+        <!-- SPECIAL OFFERS -->
+        <%- include('partials/slider.ejs')%>
         <!-- END SPECIAL OFFERS -->
+
         <div class="mancha">
             <img src="/images/manchas/pngwing.com (5).png" alt="">
         </div>
@@ -25,15 +24,15 @@
         </div>
 
         <section class="categories-section">
-            <div class="categories">
+            <div class="home-categories">
                 <div class="category-card">
-                    <a href="/category/1"><img src="/images/categorias/cat_artistica.jpg" alt=""></a>
+                    <a href="/products/category/1"><img src="/images/categorias/cat_artistica.jpg" alt=""></a>
                 </div>
                 <div class="category-card">
-                    <a href="/category/2"> <img src="/images/categorias/cat_escolar.jpg" alt=""></a>
+                    <a href="/products/category/2"> <img src="/images/categorias/cat_escolar.jpg" alt=""></a>
                 </div>
                 <div class="category-card">
-                    <a href="/category/3"> <img src="/images/categorias/cat_oficina.jpg" alt=""></a>
+                    <a href="/products/category/3"> <img src="/images/categorias/cat_oficina.jpg" alt=""></a>
                 </div>
             </div>
              
@@ -43,14 +42,12 @@
             <img src="/images/bannerpng 1.png" alt="">
         </section>
 
-
-        <div class="mancha">
-            <img src="/images/manchas/pngwing.com (5).png" alt="">
-        </div>
-
     </main>
-   <%- include('partials/footer.ejs') %>
-     <!-- JavaScript -->
-     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+   
+    <%- include('partials/footer.ejs')%>
+      
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 </body>
 </html>
