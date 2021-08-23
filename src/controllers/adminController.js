@@ -26,7 +26,39 @@ module.exports = {
         })
     }, 
     productStore: (req, res) => {
-            
+        let lastId = 1;
+
+        products.forEach(product => {
+            if(product.id > lastId){
+                lastId = product.id
+            }
+        })
+
+        let {
+            name, 
+            price, 
+            discount, 
+            category, 
+            subcategory, 
+            description
+            } = req.body;
+
+        let newProduct = {
+            id: lastId + 1,
+            name,
+            price,
+            description,
+            discount,
+            category,
+            subcategory,
+            image: "default-image.png"
+        };
+
+        products.push(newProduct);
+
+        writeProductsJSON(products)
+
+        res.redirect('/admin/products')
     }, 
     productEdit: (req, res) => {
         let product = products.find(product => product.id === +req.params.id)
@@ -37,9 +69,43 @@ module.exports = {
         })
     },
     productUpdate: (req, res) => {
-       
+
+        let {
+            name, 
+            price, 
+            discount, 
+            category, 
+            subcategory, 
+            description
+            } = req.body;
+        
+        products.forEach( product => {
+            if(product.id === +req.params.id){
+                product.id = product.id,
+                product.name = name,
+                product.price = price,
+                product.description = description,
+                product.discount = discount,
+                product.category = category,
+                product.subcategory = subcategory,
+                product.image = product.image
+            }
+        })
+
+        writeProductsJSON(products)
+
+        res.redirect('/admin/products')
     },
     productDestroy: (req, res) => {
-	
+        products.forEach( product => {
+            if(product.id === +req.params.id){
+               let productToDestroy = products.indexOf(product);
+               products.splice(productToDestroy, 1)
+            }
+        })
+        
+        writeProductsJSON(products)
+
+        res.redirect('/admin/products')
     }
 }

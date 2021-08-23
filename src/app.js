@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 let path = require('path');
+let methodOverride = require('method-override')
 
 /* ENRUTADORES */
 let indexRouter = require('./routes/index');
@@ -10,6 +11,10 @@ let usersRouter = require('./routes/users');
 
 /* Middleware */
 app.use(express.static('./public'));
+app.use(express.json());
+app.use(express.urlencoded({extended : false}));
+app.use(methodOverride('_method'))
+
 
 /* VIEWS */
 app.set('view engine', 'ejs');

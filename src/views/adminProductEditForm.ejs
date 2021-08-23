@@ -11,13 +11,13 @@
             <form class="row g-3" action="/admin/products/edit/<%= product.id%>?_method=PUT" method="POST">
                 <div class="col-12">
                     <label for="inputName" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="inputName" name="name">
+                    <input type="text" class="form-control" id="inputName" name="name" value="<%= product.name %>">
                 </div>
                 <div class="col-12">
                     <select class="form-select" id="specificSizeSelect" name="category">
                       <option selected hidden>Categorias</option>
                      <% categories.forEach(category => { %>
-                        <option value="<%- category.id %>"><%- category.name %></option>
+                        <option value="<%- category.id %>" <%= product.category == category.id ? "selected" : null %>><%- category.name %></option>
                      <% }) %>
                     </select>
                 </div>
@@ -25,17 +25,17 @@
                     <select class="form-select" id="specificSizeSelect" name="subcategory">
                       <option selected hidden>Subcategorias</option>
                      <% subcategories.forEach(subcategory => { %>
-                        <option value="<%- subcategory%>"><%- subcategory %></option>
+                        <option value="<%- subcategory%>" <%= product.subcategory === subcategory ? "selected" : null %> ><%- subcategory %></option>
                      <% }) %>
                     </select>
                 </div>
                 <div class="col-12">
                     <label for="inputPrice" class="form-label">Precio</label>
-                    <input type="number" class="form-control" id="inputPrice" name="price">
+                    <input type="number" class="form-control" id="inputPrice" name="price" value="<%= product.price %>">
                 </div>
                 <div class="col-12">
                     <label for="inputDiscount" class="form-label">Descuento</label>
-                    <input type="number" class="form-control" id="inputDiscount" name="discount">
+                    <input type="number" class="form-control" id="inputDiscount" name="discount" value="<%= product.discount %>">
                 </div>
                 <div class="col-12">
                     <label for="inputImage" class="form-label">Imagen</label>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-12">
                     <label for="validationTextarea" class="form-label">Descripción</label>
-                    <textarea class="form-control" id="validationTextarea" placeholder="Descripción" ><%= product.description %></textarea>
+                    <textarea class="form-control" id="validationTextarea" name="description" placeholder="Descripción" ><%= product.description %></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">
                     GUARDAR
