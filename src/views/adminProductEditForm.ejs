@@ -8,7 +8,7 @@
         <div class="container" style="max-width: 700px;">
           <div class="row">
             <%- include('partials/adminSidebar') %>
-            <form class="row g-3" action="/admin/products/edit/<%= product.id%>?_method=PUT" method="POST">
+            <form class="row g-3" action="/admin/products/edit/<%= product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <div class="col-12">
                     <label for="inputName" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="inputName" name="name" value="<%= product.name %>">

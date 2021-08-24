@@ -51,7 +51,7 @@ module.exports = {
             discount,
             category,
             subcategory,
-            image: "default-image.png"
+            image: req.file ? [req.file.filename] : "default-image.png"
         };
 
         products.push(newProduct);
@@ -69,7 +69,7 @@ module.exports = {
         })
     },
     productUpdate: (req, res) => {
-
+        
         let {
             name, 
             price, 
@@ -88,7 +88,7 @@ module.exports = {
                 product.discount = discount,
                 product.category = category,
                 product.subcategory = subcategory,
-                product.image = product.image
+                product.image = req.file ? [req.file.filename] : product.image
             }
         })
 
