@@ -6,14 +6,16 @@ const { register,
     processLogin,
     processRegister,
     logout } = require('../controllers/usersController');
+const loginValidator = require('../validations/loginValidator')
+const registerValidator = require('../validations/registerValidator')
 
 /* GET - Register form */
 router.get('/register', register);
-router.post('/register', processRegister);
+router.post('/register', registerValidator, processRegister);
 
 /* GET - Login form */
 router.get('/login', login);
-router.post('/login', processLogin);
+router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 
 /* GET - User profile */

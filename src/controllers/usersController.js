@@ -1,4 +1,5 @@
 const { categories, users, writeUsersJSON } = require('../data/dataBase')
+const { validationResult } = require('express-validator')
 
 
 module.exports = {
@@ -25,7 +26,13 @@ module.exports = {
 
     },
     processRegister: (req, res) => {
-      
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            
+        } else {
+            
+        }
     },
     logout: (req, res) => {
 

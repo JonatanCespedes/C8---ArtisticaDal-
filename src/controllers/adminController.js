@@ -89,6 +89,9 @@ module.exports = {
         })
     },
     productUpdate: (req, res) => {
+        let errors = validationResult(req)
+
+        if(errors.isEmpty()){
 
         let arrayImages = [];
         if(req.files){
@@ -119,12 +122,20 @@ module.exports = {
                 console.log(product)
             }
         })
-
-
-
         writeProductsJSON(products)
 
         res.redirect('/admin/products')
+        } else {
+            let product = products.find(product => product.id === +req.params.id)
+
+            res.render("adminProductEditForm", {
+                subcategories,
+                categories,
+                product,
+                errors: errors.mapped(),
+                old: req.body
+            })
+        }
     },
     productDestroy: (req, res) => {
         products.forEach( product => {
