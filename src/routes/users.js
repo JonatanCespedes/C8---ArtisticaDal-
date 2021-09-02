@@ -8,10 +8,11 @@ const { register,
     logout } = require('../controllers/usersController');
 const loginValidator = require('../validations/loginValidator')
 const registerValidator = require('../validations/registerValidator')
+const uploadUserAvatar = require('../middlewares/uploadUserAvatar')
 
 /* GET - Register form */
 router.get('/register', register);
-router.post('/register', registerValidator, processRegister);
+router.post('/register', uploadUserAvatar.single('avatar'), registerValidator, processRegister);
 
 /* GET - Login form */
 router.get('/login', login);
