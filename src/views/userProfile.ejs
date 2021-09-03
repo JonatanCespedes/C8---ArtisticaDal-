@@ -7,25 +7,25 @@
     <img src="/images/manchas/pngwing.com (5).png" alt="">
 </div>
     <main class="userProfile">
-        <div class="avatar">
-            <img src="/images/default-image.png" alt="">
+      <div class="avatar">
+            <img src="/images/usuarios/<%= user.avatar %>" alt="">
         </div>
         <div class="userProfile-container">
             <div class="userProfile_box">
                 <h3 class="userProfile_title">Datos personales</h3>
-                <p class="userProfile_item">Nombre: NOMBRE DE USUARIO</p>
-                <p class="userProfile_item">Email: EMAIL DE USUARIO</p>
-                <p class="userProfile_item">Teléfono: TELÉFONO DE USUARIO</p>
+                <p class="userProfile_item">Nombre: <%= user.name %></p>
+                <p class="userProfile_item">Email: <%= user.email %></p>
+                <p class="userProfile_item">Teléfono: <%= user.tel ? user.tel : "------" %></p>
             </div>
             <div class="userProfile_box">
                 <h3 class="userProfile_title">Datos de contacto</h3>
-                <p class="userProfile_item">Dirección: </p>
-                <p class="userProfile_item">Código postal: </p>
-                <p class="userProfile_item">Provincia: </p>
-                <p class="userProfile_item">Localidad: </p>
+                <p class="userProfile_item">Dirección: <%= user.address ? user.address : "------" %>></p>
+                <p class="userProfile_item">Código postal: <%= user.pc ? user.pc : "------" %></p>
+                <p class="userProfile_item">Provincia: <%= user.province ? user.province : "------" %></p>
+                <p class="userProfile_item">Localidad: <%= user.city ? user.city : "------" %></p>
             </div>
-            <a href="#" class="btn-ad btn-ad-primary">EDITAR DATOS</a>
-        </div>
+            <a href="/users/profile/edit/<%= user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
+        </div> 
     </main>
 <%- include('partials/footer')%>
 </body>

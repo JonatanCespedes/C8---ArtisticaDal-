@@ -1,5 +1,6 @@
 const { check, body } = require('express-validator')
 const { users } = require('../data/dataBase')
+let bcrypt = require('bcryptjs')
 
 module.exports = [
     check('email')
@@ -22,5 +23,12 @@ module.exports = [
 
     check('pass')
     .notEmpty()
-    .withMessage('Debes escribir tu contraseña')
+    .withMessage('Debes escribir tu contraseña'),
+
+    body('pass')
+    .custom((value, {req}) => {
+        let user = users.find(user => user.email === req.body.email)
+        return bcrypt.compareSync(value, user.pass)
+    })
+    .withMessage('Contraseña inválida')
 ]
