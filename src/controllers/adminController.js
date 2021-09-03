@@ -13,17 +13,21 @@ module.exports = {
         res.render('adminLogin')
     },
     dashboard: (req, res) => {
-        res.render('adminIndex')
+        res.render('adminIndex', {
+            session: req.session
+        })
     }, 
     products: (req, res) => {
         res.render('adminProducts', {
-            products
+            products,
+            session: req.session
         })
     }, 
     productsCreate: (req, res) => {
         res.render('adminProductCreateForm', {
             categories, 
-            subcategories
+            subcategories,
+            session: req.session
         })
     }, 
     productStore: (req, res) => {
@@ -75,7 +79,8 @@ module.exports = {
                 subcategories,
                 categories,
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
      
@@ -85,7 +90,8 @@ module.exports = {
         res.render('adminProductEditForm', {
             categories, 
             subcategories,
-            product
+            product,
+            session: req.session
         })
     },
     productUpdate: (req, res) => {
@@ -133,7 +139,8 @@ module.exports = {
                 categories,
                 product,
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
     },

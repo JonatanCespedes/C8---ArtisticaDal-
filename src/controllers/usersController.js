@@ -7,13 +7,15 @@ module.exports = {
     /* Register form */
     register: (req, res) => {
         res.render('register', {
-            categories
+            categories,
+            session: req.session
         })
     },
     /* Login form */
     login: (req, res) => {
         res.render('login', {
-            categories
+            categories,
+            session: req.session
     })
     },
     /* User profile */
@@ -22,7 +24,8 @@ module.exports = {
         
         res.render('userProfile', {
             categories,
-            user
+            user,
+            session: req.session
         })
     },
     profileEdit: (req, res) => {
@@ -73,7 +76,7 @@ module.exports = {
                 categories,
                 errors: errors.mapped(),
                 old:req.body,
-                bodysession: req.session
+                session: req.session
             })
         }
     },
@@ -99,6 +102,7 @@ module.exports = {
             res.render('login', {
                 categories,
                 errors: errors.mapped(),
+                session: req.session
             })
         }
     },
@@ -147,11 +151,14 @@ module.exports = {
             res.render('register', {
                 categories,
                 errors: errors.mapped(),
-                old : req.body
+                old : req.body,
+                session: req.session
             })
         }
     },
     logout: (req, res) => {
+        req.session.destroy()
 
+        res.redirect('/')
     }
 }

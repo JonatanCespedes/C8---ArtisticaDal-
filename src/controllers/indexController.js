@@ -8,7 +8,8 @@ module.exports = {
             sliderTitle : "Ofertas especiales",
             sliderProducts,
             carousel,
-            categories
+            categories,
+            session: req.session
         })
     }
 }

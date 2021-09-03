@@ -11,7 +11,8 @@ module.exports = {
             sliderTitle : "Productos relacionados",
             sliderProducts,
             product,
-            categories
+            categories,
+            session: req.session
         })
     },
     category: (req, res) => {
@@ -34,7 +35,8 @@ module.exports = {
             category,
             products: categoryProducts,
             subCategories,
-            categories
+            categories,
+            session: req.session
         })
     }
 }
