@@ -1,14 +1,1 @@
-[{
-    "id": 1,
-    "name": "jona",
-    "last_name": "jona",
-    "email": "jona@mail.com",
-    "pass": "$2a$12$MQlJaxtut1qiBwrzmN4ktuK1F0nnks5BkpPnCzoTYqv4pcxTgwJ7a",
-    "avatar": "1630625829661_img_.jpg",
-    "rol": "ROL_USER",
-    "tel": "",
-    "address": "",
-    "pc": "",
-    "province": "",
-    "city": ""
-}]
+[{"id":1,"name":"jona","last_name":"jona","email":"jona@mail.com","pass":"$2a$12$MQlJaxtut1qiBwrzmN4ktuK1F0nnks5BkpPnCzoTYqv4pcxTgwJ7a","avatar":"1630625829661_img_.jpg","rol":"ROL_USER","tel":"","address":"","pc":"","province":"","city":""},{"id":2,"name":"Patricio","last_name":"Di Bastiano","email":"pato@mail.com","pass":"$2a$12$4JWKCYt0A1zT/dGRwhrqtuqeJhS91hLu06j1JQktjTY3JBTcsRojW","avatar":"1630709944706_img_.png","rol":"ROL_USER","tel":"5215151515151","address":"Calle hacker 123","pc":"1515","province":"","city":""}]

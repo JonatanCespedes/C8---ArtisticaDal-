@@ -25,6 +25,58 @@ module.exports = {
             user
         })
     },
+    profileEdit: (req, res) => {
+        let user = users.find(user => user.id === +req.params.id)
+
+        res.render('userProfileEdit', {
+            categories,
+            user,
+            session: req.session
+        })
+
+    },
+    updateProfile: (req, res) => {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            let user = users.find(user => user.id === +req.params.id)
+
+            let {
+                name,
+                last_name,
+                tel,
+                address,
+                pc,
+                province,
+                city
+            } = req.body
+
+            user.name = name
+            user.last_name = last_name
+            user.tel = tel
+            user.address = address
+            user.pc = pc
+            user.province = province
+            user.city = city
+            user.avatar = req.file ? req.file.filename : user.avatar
+
+            writeUsersJSON(users)
+
+            delete user.pass
+
+            req.session.user = user
+
+            res.redirect('/users/profile')
+
+        }else{
+            res.render('userProfileEdit', {
+                categories,
+                errors: errors.mapped(),
+                old:req.body,
+                bodysession: req.session
+            })
+        }
+    },
     processLogin: (req, res) => {
         let errors = validationResult(req)
 
