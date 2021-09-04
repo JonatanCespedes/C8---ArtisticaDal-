@@ -21,7 +21,7 @@ app.use(session({
     secret: "artisticaDali",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    cookie: { maxAge: 30000 }
 }))
 
 /* VIEWS */

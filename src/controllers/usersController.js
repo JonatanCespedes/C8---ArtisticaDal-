@@ -94,6 +94,10 @@ module.exports = {
                 avatar: user.avatar,
                 rol: user.rol
             }  
+
+            if(req.body.remember){
+                res.cookie("userArtisticaDali", req.session.user, {expires: new Date(Date.now() + 900000), httpOnly : true})
+            }
             
             res.locals.user = req.session.user
 
@@ -158,6 +162,9 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy()
+        if(req.cookies.userArtisticaDali){
+            res.cookie('userArtisticaDali', '', {maxAge: -1})
+        }
 
         res.redirect('/')
     }
